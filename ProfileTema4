@@ -3,3 +3,7 @@ IMPORT $, STD;
 SeguroDefeso := $.file_SeguroDefeso.file;
 ProfileResultsSeguroDefeso := STD.DataPatterns.Profile(SeguroDefeso);
 OUTPUT (ProfileResultsSeguroDefeso, ALL, NAMED('ProfileResultsSeguroDefeso'));
+
+AuxilioEmergencial := $.file_AuxilioEmergencial.file;
+ProfileResultsAuxilioEmergencial := STD.DataPatterns.Profile(AuxilioEmergencial);
+OUTPUT (ProfileResultsAuxilioEmergencial, ALL, NAMED('ProfileResultsAuxilioEmergencial'));
