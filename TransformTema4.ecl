@@ -3,15 +3,15 @@ IMPORT $,STD;
 // Auxilio Emergencial
 
 new_layout := RECORD
-  UNSIGNED recid;
-  STRING beneficio;
+	UNSIGNED recid;
+	STRING beneficio;
 	$.RecordsOtimizadasTema4.NewLayoutAuxilioEmergencial;
 END;
 
 new_layout MyTransf($.RecordsOtimizadasTema4.NewLayoutAuxilioEmergencial Le, UNSIGNED cnt) := TRANSFORM
 	SELF.recid := cnt;
 	SELF.beneficio := 'AE';
-  SELF := Le;
+  	SELF := Le;
 END;
 
 newds := PROJECT($.RecordsOtimizadasTema4.New_File_Auxilio_Emergencial ,MyTransf(LEFT,COUNTER));
@@ -33,7 +33,7 @@ OUTPUT(beneficiario_auxilio_emergencial, NAMED('beneficiario_auxilio_emergencial
 // SEGURO DEFESO
 
 new_layoutsd := RECORD
-  UNSIGNED recid;
+	UNSIGNED recid;
 	STRING2 beneficio;
 	$.RecordsOtimizadasTema4.NewLayoutSeguroDefeso;
 END;
@@ -41,7 +41,7 @@ END;
 new_layoutsd MyTransfsd($.RecordsOtimizadasTema4.NewLayoutSeguroDefeso Le, UNSIGNED cnt) := TRANSFORM
 	SELF.recid := cnt;
 	SELF.beneficio := 'SD';
-  SELF := Le;
+  	SELF := Le;
 END;
 
 newdssd := PROJECT($.RecordsOtimizadasTema4.New_File_Seguro_Defeso ,MyTransfsd(LEFT,COUNTER));
